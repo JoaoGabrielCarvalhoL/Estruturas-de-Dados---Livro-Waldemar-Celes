@@ -1,0 +1,21 @@
+Type					Size			Values interval 
+char					1 byte			-128 a 127
+unsigned char			1 byte			0 a 255
+short int				2 bytes			-32 768 a 32 767
+unsigned short int		2 bytes			0 a 65 535
+long int				4 bytes			-2 147 483 648 a 2 147 483 647
+unsigned long int		4 bytes			4 294 967295
+float 					4 bytes			± 10-³⁸ a 10³⁸
+double 					8 bytes 		± 10 -³⁰⁸ a 10³⁰⁸
+
+
+1 byte = 8 bits 
+= 
+2⁸ = 256
+
+The result produced by a relational operator
+is zero or one. In C, there is no boolean type (true or false). The zero value is interpreted
+as false and any value other than zero is considered true.
+
+Thus, if the result of a comparison is false, the value 0 is produced, otherwise, the value 0 is produced.
+value 1.

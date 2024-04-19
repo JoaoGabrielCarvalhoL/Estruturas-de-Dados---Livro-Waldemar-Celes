@@ -1,0 +1,13 @@
+float mat[4][3]
+	Linhas | Colunas
+
+float m[4][3] = {{ 5.0,10.0,15.0},
+				{20.0,25.0,30.0},
+				{35.0,40.0,45.0},
+				{50.0,55.0,60.0}};
+
+As matrizes também podem ser inicializadas na declaração:
+float mat[4][3] = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+
+Ou podemos inicializar seqüencialmente:
+float mat[4][3] = {1,2,3,4,5,6,7,8,9,10,11,12};

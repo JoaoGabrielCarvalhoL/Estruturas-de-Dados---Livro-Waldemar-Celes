@@ -1,0 +1,37 @@
+Constante cadeia de caracteres**
+Em códigos C, uma seqüência de caracteres delimitada por aspas representa uma constante cadeia de caracteres, ou seja, uma expressão constante, cuja avaliação resulta no ponteiro onde a cadeia de caracteres está armazenada. Para exemplificar, vamos considerar o trecho de código abaixo:
+
+	#include <string.h>
+	int main ( void )
+	{
+		char cidade[4];
+		strcpy (cidade, "Rio" );
+		printf ( "%s \n", cidade );
+		return 0;
+	}
+
+De forma ilustrativa, o que acontece é que, quando o compilador encontra a cadeia "Rio", automaticamente é alocada na área de constantes a seguinte seqüência de caracteres:
+'R', 'i', 'o', '\0'
+e é fornecido o ponteiro para o primeiro elemento desta seqüência. Assim, a função strcpy recebe dois ponteiros de cadeias: o primeiro aponta para o espaço associado à variável cidade e o segundo aponta para a área de constantes onde está armazenada a cadeia Rio .
+
+Desta forma, também é válido escrever:
+	int main (void)
+	{
+		char *cidade;
+		/* declara um ponteiro para char */
+		cidade = "Rio"; /* cidade recebe o endereco da cadeia
+		printf ( "%s \n", cidade );
+		return 0;
+	}
+
+" Rio" */
+
+Existe uma diferença sutil entre as duas declarações abaixo:
+
+char s1[] = "Rio de Janeiro";
+char* s2 = "Rio de Janeiro";
+
+Na primeira, declaramos um vetor de char local que é inicializado com a cadeia de caracteres Rio de Janeiro , seguido do caractere nulo. A variável s1 ocupa, portanto, 15 bytes de memória. Na segunda, declaramos um ponteiro para char que é inicializado com o endereço de uma área de memória onde a constante cadeia de caracteres Rio de Janeiro está armazenada. A variável s2 ocupa 4 bytes (espaço de um ponteiro). 
+Podemos verificar esta diferença imprimindo os valores sizeof(s1) e sizeof(s2). Como s1 é um vetor local, podemos alterar o valor de seus elementos. Por exemplo, é válido escrever s1[0]='X'; alterando o conteúdo da cadeia para Xio de Janeiro . No entanto, não é válido escrever s2[0]='X'; pois estaríamos tentando alterar o conteúdo de uma área de constante.
+
+Texto extraído das Página 64 e 65 - Constante Cadeia de Caracteres.
